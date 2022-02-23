@@ -53,12 +53,12 @@ $(function() {
             data: $(this).serialize(),
             success: function(res) {
                 if (res.status !== 0) {
-                    console.log(res);
                     return layer.msg(res.message);
                 }
                 localStorage.setItem('token', res.token);
                 layer.msg('登录成功');
-                location.href = '/index.html'
+                alert(localStorage.getItem('token'));
+                location.href = './index.html';
             }
         })
     })
